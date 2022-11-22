@@ -19,18 +19,9 @@
 	<div id="wrapper">
 
 		<!-- header -->
-		<div class="header">
-			<iconify-icon icon="akar-icons:text-align-justified" width="30"
-				heigth="30"></iconify-icon>
-			<span class="title"> <span>from place</span> <span
-				class="to-place">to place</span>
-			</span>
-			<div class="icon-container">
-				<img src='images/man2.svg' class="profile">
-				<iconify-icon icon="fe:login" class="icon" width="30" heigth="30"></iconify-icon>
-				<iconify-icon icon="fe:logout" class="icon" width="30" heigth="30"></iconify-icon>
-			</div>
-		</div>
+		<%
+		pageContext.include("/WEB-INF/views/include/header.jsp");
+		%>
 
 		<!-- main -->
 		<script
@@ -42,21 +33,29 @@
 			integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
 			crossorigin="anonymous"></script>
 
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-ride="carousel">
 			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="0"
+					class="active"></li>
 				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 			</ol>
 			<div class="carousel-inner " width="50%" height="30%" margin="auto">
 				<div class="carousel-item active" style="text-align: center;">
-					<a href="mainView.restaurant"><img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/3rWZ/image/rXpMIl8sMxtoBzR1PL6OHK1KxLw.jpg" width="70%" height="30%" alt="image"></a>
+					<a href="mainView.restaurant"><img
+						src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/3rWZ/image/rXpMIl8sMxtoBzR1PL6OHK1KxLw.jpg"
+						width="70%" height="30%" alt="image"></a>
 				</div>
 				<div class="carousel-item" style="text-align: center;">
-					<a href=""><img src="https://m.nongmin.com/upload/bbs/202209/20220906091547637/20220906091547637.jpg" width="70%" height="30%" alt="image"></a>
+					<a href=""><img
+						src="https://m.nongmin.com/upload/bbs/202209/20220906091547637/20220906091547637.jpg"
+						width="70%" height="30%" alt="image"></a>
 				</div>
 				<div class="carousel-item" style="text-align: center;">
-					<a href="mainView.flight"><img src="http://res.heraldm.com/content/image/2016/11/20/20161120000213_0.jpg" width="70%" height="30%" alt="image"></a>
+					<a href="mainView.flight"><img
+						src="http://res.heraldm.com/content/image/2016/11/20/20161120000213_0.jpg"
+						width="70%" height="30%" alt="image"></a>
 					<!-- class="d-block w-10" -->
 				</div>
 			</div>
@@ -73,38 +72,13 @@
 		</div>
 		<div style="text-align: center;">
 
-
-			<!-- <table border="1">
-   <tr>
-      <td>공지사항</td>
-      <td><button value="더보기">++++</td>
-   </tr>
-   <tr>
-      <td>교직원 ~~~</td>
-      <td>2022.12.12</td>
-   </tr>
-   <tr>
-      <td>교직원 ~~~</td>
-      <td>2022.12.12</td>
-   </tr><tr>
-      <td>교직원 ~~~</td>
-      <td>2022.12.12</td>
-   </tr>
-   </table>
- -->
-
-
 			<br> <br> <br> <img src="images/main/메인게시판1.PNG"
 				width="70%" height="20%" margin="auto" alt="image"> <br>
 			<br> <br>
-
-
-
 		</div>
 	</div>
 
 	<%-- https://cms.kookmin.ac.kr/apply/notice/faq.do?mode=view&articleNo=1191
-
 <div class = "main-mini-box main-mini-box02">
    <div class = "mini-tab-box>
     <ul>
@@ -117,8 +91,6 @@
           <c:param name="articleCount" value="5"/> <!-- 출력할 게시물 갯수 -->
           <c:param name="categoryId" value=""/>   <!-- 카테고리 아이디 -->
         </c:import><a class="viewmore" href="etc-board/board03.do" title="공모/대외활동 바로가기"> 더보기</a></li>
-   
-   
    <li class="active><a class="mini-board-tab" href="#a" title="문의사항"> 문의사항 </a>
        <!-- 게시판 타입 2 -->
        <c:import charEncoding="utf-8" url="/cms/content/widget.do">
@@ -132,16 +104,12 @@
 </div>
 </div>
 --%>
-
-
-<a href="joinView.do">회원가입</a>
-
+	<a href="joinView.do">회원가입</a>
 	<!-- footer -->
-	<div class="footer">
-		<span class="footer-text"> Kosa Team Project<br> 장소 : 서울시
-			종로구 혜화동<br> Tel : 02 - 444 - 3366
-		</span>
-	</div>
+	<%
+	pageContext.include("/WEB-INF/views/include/footer.jsp");
+	%>
+
 
 </body>
 </html>

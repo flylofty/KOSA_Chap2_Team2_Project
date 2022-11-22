@@ -27,7 +27,7 @@ reviewMore?.addEventListener('click', () => location.href="review.html" );
 
 iconify.forEach(iconList => iconList?.addEventListener('click', e => {
   const href = (e.target.icon === "akar-icons:text-align-justified" )
-               ? "menu.html" 
+               ? "menu.htm" 
                : e.target.icon === "fe:login"
                ? "login.html"
                : e.target.icon === "fe:logout"
