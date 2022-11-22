@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.co.enjo2.action.Action;
 import kr.co.enjo2.action.ActionForward;
+import kr.co.enjo2.service.basic.GatherPageMoveService;
+import kr.co.enjo2.service.restaurant.RestaurantMainPageService;
 
 @WebServlet({ "/RestaurantController", "*.restaurant" })
 public class RestaurantController extends HttpServlet {
@@ -28,6 +30,8 @@ public class RestaurantController extends HttpServlet {
     	ActionForward forward = null;
     	
     	if (url_Command.equals("/mainView.restaurant")) {
+    		action = new RestaurantMainPageService();
+    		forward = action.execute(request, response);
     	}
     	
     	if(forward != null) {

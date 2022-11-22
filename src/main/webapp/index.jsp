@@ -50,7 +50,7 @@
 			</ol>
 			<div class="carousel-inner " width="50%" height="30%" margin="auto">
 				<div class="carousel-item active" style="text-align: center;">
-					<a href=""><img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/3rWZ/image/rXpMIl8sMxtoBzR1PL6OHK1KxLw.jpg" width="70%" height="30%" alt="image"></a>
+					<a href="mainView.restaurant"><img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/3rWZ/image/rXpMIl8sMxtoBzR1PL6OHK1KxLw.jpg" width="70%" height="30%" alt="image"></a>
 				</div>
 				<div class="carousel-item" style="text-align: center;">
 					<a href=""><img src="https://m.nongmin.com/upload/bbs/202209/20220906091547637/20220906091547637.jpg" width="70%" height="30%" alt="image"></a>
