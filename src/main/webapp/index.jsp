@@ -134,6 +134,7 @@
 --%>
 
 
+<a href="joinView.do">회원가입</a>
 
 	<!-- footer -->
 	<div class="footer">
