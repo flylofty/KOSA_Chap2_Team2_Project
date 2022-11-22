@@ -104,7 +104,6 @@
 </div>
 </div>
 --%>
-	<a href="joinView.do">회원가입</a>
 	<!-- footer -->
 	<%
 	pageContext.include("/WEB-INF/views/include/footer.jsp");

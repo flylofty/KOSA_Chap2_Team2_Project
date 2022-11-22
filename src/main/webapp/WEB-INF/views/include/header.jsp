@@ -8,8 +8,9 @@
 		class="to-place">to place</span>
 	</span>
 	<div class="icon-container">
-		<img src='images/man2.svg' class="profile">
-		<iconify-icon icon="fe:login" class="icon" width="30" heigth="30"></iconify-icon>
+		<img src='images/man2.svg' class="profile"> <a
+			href="loginView.do"><iconify-icon icon="fe:login" class="icon"
+				width="30" heigth="30"></iconify-icon></a>
 		<iconify-icon icon="fe:logout" class="icon" width="30" heigth="30"></iconify-icon>
 	</div>
 </div>
