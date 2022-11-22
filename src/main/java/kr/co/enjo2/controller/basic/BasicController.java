@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.enjo2.action.Action;
 import kr.co.enjo2.action.ActionForward;
 import kr.co.enjo2.service.basic.GatherPageMoveService;
-import kr.co.enjo2.service.basic.TestViewMoveService;
+import kr.co.enjo2.service.member.JoinServiceAction;
 import kr.co.enjo2.service.member.MemberLoginOkService;
 import kr.co.enjo2.service.member.MemberLoginViewService;
 import kr.co.enjo2.service.member.MemberRegisterOk;
@@ -45,8 +45,8 @@ public class BasicController extends HttpServlet {
     		forward = action.execute(request, response);
     	} else if(url_Command.equals("/joinView.do")) {
     		// 회원가입 페이지 가기
-    		//action = new ;
-    		//forward = action.execute(request, response);
+    		action = new JoinServiceAction();
+    		forward = action.execute(request, response);
     	}  else if(url_Command.equals("/joinOk.do")) {
     		// 회원가입 하기 (회원가입 요청)
     		action = new MemberRegisterOk();
