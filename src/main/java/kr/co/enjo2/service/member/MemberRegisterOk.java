@@ -21,14 +21,15 @@ public class MemberRegisterOk implements Action {
 			String pw = request.getParameter("pw");
 			String nickname = request.getParameter("nickname");
 			String email = request.getParameter("email");
-			String address = request.getParameter("address");
 			
 			MemberDto member = new MemberDto();
 			member.setId(id);
 			member.setPassword(pw);
 			member.setNickName(nickname);
 			member.setEmail(email);
-			member.setAddress(address);
+			
+			System.out.println("================================");
+			System.out.println(member);
 			
 			MemberDao dao = new MemberDao();
 			int result = dao.saveOne(member);
@@ -38,7 +39,7 @@ public class MemberRegisterOk implements Action {
 				// 로그인 페이지로 리다이렉트
 				forward.setRedirect(true);
 				// 일단 야매 "http://localhost:8090/team2" 이부분 어떻게 뽑음??
-				forward.setPath("http://localhost:8090/team2/joinView.do");
+				forward.setPath(request.getContextPath() + "/loginView.do");
 			} else {
 				forward = null;
 				PrintWriter out = response.getWriter();

@@ -15,6 +15,7 @@ import kr.co.enjo2.service.basic.GatherPageMoveService;
 import kr.co.enjo2.service.member.JoinServiceAction;
 import kr.co.enjo2.service.member.MemberLoginOkService;
 import kr.co.enjo2.service.member.MemberLoginViewService;
+import kr.co.enjo2.service.member.MemberLogoutService;
 import kr.co.enjo2.service.member.MemberRegisterOk;
 
 @WebServlet({ "/BasicController", "*.do" })
@@ -42,6 +43,9 @@ public class BasicController extends HttpServlet {
     	} else if(url_Command.equals("/loginOk.do")) {
     		// 로그인 하기 (로그인 요청)
     		action = new MemberLoginOkService();
+    		forward = action.execute(request, response);
+    	} else if (url_Command.equals("/logout.do")) {
+    		action = new MemberLogoutService();
     		forward = action.execute(request, response);
     	} else if(url_Command.equals("/joinView.do")) {
     		// 회원가입 페이지 가기
