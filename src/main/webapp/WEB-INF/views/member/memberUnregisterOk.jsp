@@ -24,11 +24,11 @@
 	%>
 	<div class="culture-container">
 		<div class="culture-information">
-			<span class="culture-sub-heading">마이 페이지</span>
+		<!-- 	<span class="culture-sub-heading">마이 페이지</span>
 			<ul class="page-category">
 				<li>수정</li>
 				<li class="sub-heading">탈퇴</li>
-			</ul>
+			</ul> -->
 
 			<div class="information-container">
 				<div class="information-withdrawal">

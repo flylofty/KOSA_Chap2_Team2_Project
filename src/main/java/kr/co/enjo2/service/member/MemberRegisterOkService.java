@@ -10,7 +10,7 @@ import kr.co.enjo2.action.ActionForward;
 import kr.co.enjo2.dao.member.MemberDao;
 import kr.co.enjo2.dto.member.MemberDto;
 
-public class MemberRegisterOk implements Action {
+public class MemberRegisterOkService implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {

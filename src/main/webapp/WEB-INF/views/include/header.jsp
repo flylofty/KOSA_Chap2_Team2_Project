@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+<link href="style/header-Footer.css" rel="stylesheet" type="text/css"/>
+  <link href="style/common.css" rel="stylesheet" type="text/css"/>
 <div class="header">
-	<iconify-icon icon="akar-icons:text-align-justified" width="30"
-		heigth="30"></iconify-icon>
+	<a href="${request.getContextPath}myMenu.do"> 
+	<iconify-icon icon="akar-icons:text-align-justified" width="30" heigth="30"></iconify-icon>
+	</a>
+
 	<a href="${pageContext.request.contextPath}"> <span class="title">
 			<span>ENJO2 YOUR</span> <span class="to-place">TRIP</span>
 	</span>

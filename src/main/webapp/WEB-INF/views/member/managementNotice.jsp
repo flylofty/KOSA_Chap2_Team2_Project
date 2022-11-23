@@ -21,18 +21,26 @@
 <body>
 	<!-- header -->
 	<%
-		pageContext.include("/WEB-INF/views/include/header.jsp");
-		%>
+	pageContext.include("/WEB-INF/views/include/header.jsp");
+	%>
 
 	<!-- main -->
 	<div class="culture-container">
 		<div class="information-frame">
 			<span class="culture-sub-heading">관리자 페이지</span>
 			<ul class="page-category">
-				<li class="sub-heading">공지사항</li>
-				<li>문의사항</li>
-				<li>통계</li>
-				<li>예매관리</li>
+				<a href="${request.getContextPath}managementNotice.do">
+					<li class="sub-heading">공지사항</li>
+				</a>
+				<a href="${request.getContextPath}managementQna.do">
+					<li>문의사항</li>
+				</a>
+				<a href="${request.getContextPath}managementStatistics.do">
+					<li>통계</li>
+				</a>
+				<a href="${request.getContextPath}managementFlight.do">
+					<li>예매관리</li>
+				</a>
 			</ul>
 			<table class="management-table">
 				<thead>
