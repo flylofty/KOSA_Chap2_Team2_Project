@@ -15,7 +15,7 @@ public class JoinServiceAction implements Action {
 		// TODO Auto-generated method stub
 		ActionForward action = new ActionForward();
 		action.setRedirect(false);
-		action.setPath("/WEB-INF/views/register/joinView.jsp");
+		action.setPath("/WEB-INF/views/member/joinView.jsp");
 		return action;
 	}
 
