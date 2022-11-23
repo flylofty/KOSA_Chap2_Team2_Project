@@ -26,8 +26,12 @@
 		<div class="culture-information">
 			<span class="culture-sub-heading">마이 페이지</span>
 			<ul class="page-category">
-				<li>수정</li>
-				<li class="sub-heading">탈퇴</li>
+				<a href="${request.getContextPath}memberEdit.do">
+					<li>수정</li>
+				</a>
+				<a href="${request.getContextPath}memberUnregister.do">
+					<li class="sub-heading">탈퇴</li>
+				</a>
 			</ul>
 
 			<div class="information-container">
@@ -36,7 +40,9 @@
 						src="images/warning.svg">
 					<p class="withdrawal-infomation">한번 회원 탈퇴를 하시면 사용자 정보가 다 삭제
 						됩니다. 그래도 탈퇴하시겠습니까?</p>
-					<button class="withdrawal-btn">탈퇴하기</button>
+					<a href="${request.getContextPath}memberUnregisterOk.do">
+						<button class="withdrawal-btn">탈퇴하기</button>
+					</a>
 				</div>
 			</div>
 

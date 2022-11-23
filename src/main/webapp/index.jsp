@@ -13,69 +13,70 @@
 <script
 	src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 <link href="style/header-Footer.css" rel="stylesheet" type="text/css" />
-<link href="style/main/main_view.css" rel="stylesheet" type="text/css" />
+<link href="style/culture-place.css" rel="stylesheet" type="text/css" />
+<link href="style/common.css" rel="stylesheet" type="text/css" />
+<link href="style/management-page.css" rel="stylesheet" type="text/css" />
+<link href="style/culture-gathering.css" rel="stylesheet"
+	type="text/css" />
+
 </head>
 <body>
-	<div id="wrapper">
+	<!-- header -->
+	<%
+	pageContext.include("/WEB-INF/views/include/header.jsp");
+	%>
+	<!-- main -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
 
-		<!-- header -->
-		<%
-		pageContext.include("/WEB-INF/views/include/header.jsp");
-		%>
-
-		<!-- main -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-			crossorigin="anonymous"></script>
-
-		<div id="carouselExampleIndicators" class="carousel slide"
-			data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0"
-					class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner " width="50%" height="30%" margin="auto">
-				<div class="carousel-item active" style="text-align: center;">
-					<a href="mainView.restaurant"><img
-						src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/3rWZ/image/rXpMIl8sMxtoBzR1PL6OHK1KxLw.jpg"
-						width="70%" height="30%" alt="image"></a>
-				</div>
-				<div class="carousel-item" style="text-align: center;">
-					<a href=""><img
-						src="https://m.nongmin.com/upload/bbs/202209/20220906091547637/20220906091547637.jpg"
-						width="70%" height="30%" alt="image"></a>
-				</div>
-				<div class="carousel-item" style="text-align: center;">
-					<a href="mainView.flight"><img
-						src="http://res.heraldm.com/content/image/2016/11/20/20161120000213_0.jpg"
-						width="70%" height="30%" alt="image"></a>
-					<!-- class="d-block w-10" -->
-				</div>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner " width="50%" height="30%" margin="auto">
+			<div class="carousel-item active" style="text-align: center;">
+				<a href="mainView.restaurant"><img
+					src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/3rWZ/image/rXpMIl8sMxtoBzR1PL6OHK1KxLw.jpg"
+					width="70%" height="30%" alt="image"></a>
 			</div>
-			<button class="carousel-control-prev" type="button"
-				data-target="#carouselExampleIndicators" data-slide="prev">
-				<!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<div class="carousel-item" style="text-align: center;">
+				<a href=""><img
+					src="https://m.nongmin.com/upload/bbs/202209/20220906091547637/20220906091547637.jpg"
+					width="70%" height="30%" alt="image"></a>
+			</div>
+			<div class="carousel-item" style="text-align: center;">
+				<a href="mainView.flight"><img
+					src="http://res.heraldm.com/content/image/2016/11/20/20161120000213_0.jpg"
+					width="70%" height="30%" alt="image"></a>
+				<!-- class="d-block w-10" -->
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button"
+			data-target="#carouselExampleIndicators" data-slide="prev">
+			<!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span> -->
-			</button>
-			<button class="carousel-control-next" type="button"
-				data-target="#carouselExampleIndicators" data-slide="next">
-				<!--  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		</button>
+		<button class="carousel-control-next" type="button"
+			data-target="#carouselExampleIndicators" data-slide="next">
+			<!--  <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span> -->
-			</button>
-		</div>
-		<div style="text-align: center;">
+		</button>
+	</div>
+	<div style="text-align: center;">
 
-			<br> <br> <br> <img src="images/main/메인게시판1.PNG"
-				width="70%" height="20%" margin="auto" alt="image"> <br>
-			<br> <br>
-		</div>
+		<!-- <br> <br> <br> <img src="images/main/메인게시판1.PNG"
+			width="70%" height="20%" margin="auto" alt="image"> <br> <br> -->
+		<br>
 	</div>
 
 	<%-- https://cms.kookmin.ac.kr/apply/notice/faq.do?mode=view&articleNo=1191
@@ -108,7 +109,5 @@
 	<%
 	pageContext.include("/WEB-INF/views/include/footer.jsp");
 	%>
-
-
 </body>
 </html>

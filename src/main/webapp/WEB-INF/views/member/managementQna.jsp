@@ -26,110 +26,118 @@
 
 	<!-- main -->
 	<div class="culture-container">
-    <div class="information-frame">
-      <span class="culture-sub-heading">관리자 페이지</span>
-      <ul class="page-category">
-        <li>공지사항</li>
-        <li class="sub-heading">문의사항</li>
-        <li>통계</li>
-        <li>예매관리</li>
-      </ul>
-      <table class="management-table">
-        <thead>
-          <tr>
-            <td>게시번호</td>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>작성일자</td>
-            <td>조회수</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>오늘 점심</td>
-            <td>세종</td>
-            <td>11-22</td>
-            <td>5</td>
-          </tr>
-        </tbody>
-      </table>
+		<div class="information-frame">
+			<span class="culture-sub-heading">관리자 페이지</span>
+			<ul class="page-category">
+				<a href="${request.getContextPath}managementNotice.do">
+					<li>공지사항</li>
+				</a>
+				<a href="${request.getContextPath}managementQna.do">
+					<li class="sub-heading">문의사항</li>
+				</a>
+				<a href="${request.getContextPath}managementStatistics.do">
+					<li>통계</li>
+				</a>
+				<a href="${request.getContextPath}managementFlight.do">
+					<li>예매관리</li>
+				</a>
+			</ul>
+			<table class="management-table">
+				<thead>
+					<tr>
+						<td>게시번호</td>
+						<td>제목</td>
+						<td>작성자</td>
+						<td>작성일자</td>
+						<td>조회수</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>오늘 점심</td>
+						<td>세종</td>
+						<td>11-22</td>
+						<td>5</td>
+					</tr>
+				</tbody>
+			</table>
 
-      <ul class="paging-btn">
-        <li>이전</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>다음</li>
-      </ul>
-    </div>
-  </div>
+			<ul class="paging-btn">
+				<li>이전</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>다음</li>
+			</ul>
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%

@@ -27,8 +27,12 @@
 		<div class="culture-information">
 			<span class="culture-sub-heading">마이 페이지</span>
 			<ul class="page-category">
-				<li class="sub-heading">수정</li>
-				<li>탈퇴</li>
+				<a href="${request.getContextPath}memberEdit.do">
+					<li class="sub-heading">수정</li>
+				</a>
+				<a href="${request.getContextPath}memberUnregister.do">
+					<li>탈퇴</li>
+				</a>
 			</ul>
 
 			<div class="information-container">
@@ -49,7 +53,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- footer -->
 	<%
 	pageContext.include("/WEB-INF/views/include/footer.jsp");

@@ -26,29 +26,36 @@
 
 	<!-- main -->
 	<div class="culture-container">
-    <div class="information-frame">
-      <span class="culture-sub-heading">관리자 페이지</span>
-      <ul class="page-category">
-        <li>공지사항</li>
-        <li>문의사항</li>
-        <li class="sub-heading">통계</li>
-        <li>예매관리</li>
-      </ul>
-      
-      
+		<div class="information-frame">
+			<span class="culture-sub-heading">관리자 페이지</span>
+			<ul class="page-category">
+				<a href="${request.getContextPath}managementNotice.do">
+					<li>공지사항</li>
+				</a>
+				<a href="${request.getContextPath}managementQna.do">
+					<li>문의사항</li>
+				</a>
+				<a href="${request.getContextPath}managementStatistics.do">
+					<li class="sub-heading">통계</li>
+				</a>
+				<a href="${request.getContextPath}managementFlight.do">
+					<li>예매관리</li>
+				</a>
+			</ul>
 
-	<!-- footer -->
-	<%
-	pageContext.include("/WEB-INF/views/include/footer.jsp");
-	%>
 
-	<!-- 포지션 앱솔루트 -->
-	<ul class="macgyver-btn">
-		<li><img src="btn-icon/plus-btn.svg"
-			style="background-color: #ffff; border-radius: 50%;"></li>
-		<li><iconify-icon icon="iconoir:edit-pencil"
-				style="color: #ef6351;" width="30" height="30"></iconify-icon></li>
-	</ul>
 
+			<!-- footer -->
+			<%
+			pageContext.include("/WEB-INF/views/include/footer.jsp");
+			%>
+
+			<!-- 포지션 앱솔루트 -->
+			<ul class="macgyver-btn">
+				<li><img src="btn-icon/plus-btn.svg"
+					style="background-color: #ffff; border-radius: 50%;"></li>
+				<li><iconify-icon icon="iconoir:edit-pencil"
+						style="color: #ef6351;" width="30" height="30"></iconify-icon></li>
+			</ul>
 </body>
 </html>
