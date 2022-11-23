@@ -1,23 +1,15 @@
 package kr.co.enjo2.dto.member;
 
 public class MemberDto {
-	private int memberNo;
 	private String id;
 	private String nickName;
 	private String password;
 	private String email;
-	private String address;
 	// enum 고려, user or admin
 	private String memberType;
 	
 	public MemberDto() {}
 	
-	public int getMemberNo() {
-		return memberNo;
-	}
-	public void setMemberNo(int memberNo) {
-		this.memberNo = memberNo;
-	}
 	public String getId() {
 		return id;
 	}
@@ -42,22 +34,15 @@ public class MemberDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
 	public String getMemberType() {
 		return memberType;
 	}
 	public void setMemberType(String memberType) {
 		this.memberType = memberType;
 	}
-
 	@Override
 	public String toString() {
-		return "MemberDto [memberNo=" + memberNo + ", id=" + id + ", nickName=" + nickName + ", password=" + password
-				+ ", email=" + email + ", address=" + address + ", memberType=" + memberType + "]";
+		return "MemberDto [id=" + id + ", nickName=" + nickName + ", password=" + password + ", email=" + email
+				+ ", memberType=" + memberType + "]";
 	}
 }

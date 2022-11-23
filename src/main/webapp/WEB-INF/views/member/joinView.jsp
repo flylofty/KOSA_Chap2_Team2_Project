@@ -76,7 +76,6 @@
 				<input type="password" name="pw_confirm" placeholder="비밀번호 확인" required /><br />
 				<input type="text" name="nickname" placeholder="닉네임" required /><br />
 				<input type="email" name="email" placeholder="이메일" required /><br />
-				<input type="text" name="address" placeholder="주소" required /><br />
 				<input type="hidden" name="member" value="ordinary" /><br /> 
 				<input type="submit" value="회원가입" onclick="check();" /><br/> 
 				<a href="culture-place.html"> <input type="button" value="페이지 이동" />

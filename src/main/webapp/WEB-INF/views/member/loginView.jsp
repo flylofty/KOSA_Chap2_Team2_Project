@@ -27,9 +27,9 @@
 			<div class="information-text">
 				<span class="sub-heading">로그인</span>
 			</div>
-			<form action="" method="post">
+			<form action="loginOk.do" method="post">
 				<input type="text" name="id" placeholder="아이디" required><br>
-				<input type="password" name="pw" placeholder="비밀번호" required><br>
+				<input type="password" name="pwd" placeholder="비밀번호" required><br>
 				<input type="submit" value="로그인"><br> <a
 					href="joinView.do"> <input type="button" value="회원가입"
 					class="register-btn">

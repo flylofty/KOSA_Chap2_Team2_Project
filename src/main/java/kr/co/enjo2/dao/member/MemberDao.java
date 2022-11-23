@@ -28,7 +28,7 @@ public class MemberDao {
 		ResultSet rs = null;
 		try {
 			conn = ds.getConnection();
-			String sql = "select mem_no, mem_id, mem_nic, mem_pwd, mem_email, mem_addr, mem_type " 
+			String sql = "select mem_id, mem_nic, mem_pwd, mem_email, mem_type " 
 					   + "from member "
 					   + "where mem_id = ?";
 			pstmt = conn.prepareStatement(sql);
@@ -36,12 +36,10 @@ public class MemberDao {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberDto();
-				member.setMemberNo(rs.getInt("mem_no"));
 				member.setId(rs.getString("mem_id"));
 				member.setNickName(rs.getString("mem_nic"));
 				member.setPassword(rs.getString("mem_pwd"));
 				member.setEmail(rs.getString("mem_email"));
-				member.setAddress(rs.getString("mem_addr"));
 				member.setMemberType(rs.getString("mem_type"));
 			}
 		} catch (Exception e) {
@@ -68,16 +66,15 @@ public class MemberDao {
 		
 		try {
 			conn = ds.getConnection();
-			String sql="insert into member(mem_no, mem_id, mem_nic, mem_pwd, mem_email, mem_addr, mem_type) "+
-			           "values(member_seq.NEXTVAL, ?, ?, ?, ?, ?, ?)";
+			String sql="insert into member(mem_id, mem_nic, mem_pwd, mem_email, mem_type) "+
+			           "values(?, ?, ?, ?, ?)";
 			pstmt =conn.prepareStatement(sql);
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getNickName());
 			pstmt.setString(3, member.getPassword());
 			pstmt.setString(4, member.getEmail());
-			pstmt.setString(5, member.getAddress());
 			// 나중에 바뀔 수 있음
-			pstmt.setString(6, "user");
+			pstmt.setString(5, "user");
 			row = pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
