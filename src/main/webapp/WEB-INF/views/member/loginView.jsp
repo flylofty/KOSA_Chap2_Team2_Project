@@ -14,6 +14,12 @@
 <link href="style/information-page.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<!-- header -->
+	<%
+	pageContext.include("/WEB-INF/views/include/header.jsp");
+	%>
+	<br>
+	<!-- main -->
 	<div class="information-container">
 		<div class="back-btn">
 			<iconify-icon icon="bx:arrow-back" width="30" height="30"></iconify-icon>
@@ -37,5 +43,11 @@
 			</form>
 		</div>
 	</div>
+	<br>
+	<br>
+	<!-- footer -->
+	<%
+	pageContext.include("/WEB-INF/views/include/footer.jsp");
+	%>
 </body>
 </html>

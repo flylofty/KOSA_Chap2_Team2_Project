@@ -57,6 +57,12 @@
 </script>
 </head>
 <body>
+	<!-- header -->
+	<%
+	pageContext.include("/WEB-INF/views/include/header.jsp");
+	%>
+	<br>
+	<!-- main -->
 	<div class="information-container">
 		<div class="back-btn">
 			<iconify-icon icon="bx:arrow-back" width="30" height="30"></iconify-icon>
@@ -70,18 +76,25 @@
 			<div class="information-text">
 				<span class="sub-heading">회원가입</span>
 			</div>
-			<form name="bbs" action="${pageContext.request.contextPath}/joinOk.do" method="POST">
-				<input type="text" name="id" placeholder="아이디" required /><br /> 
-				<input type="password" name="pw" placeholder="비밀번호" required /><br /> 
-				<input type="password" name="pw_confirm" placeholder="비밀번호 확인" required /><br />
+			<form name="bbs"
+				action="${pageContext.request.contextPath}/joinOk.do" method="POST">
+				<input type="text" name="id" placeholder="아이디" required /><br /> <input
+					type="password" name="pw" placeholder="비밀번호" required /><br /> <input
+					type="password" name="pw_confirm" placeholder="비밀번호 확인" required /><br />
 				<input type="text" name="nickname" placeholder="닉네임" required /><br />
 				<input type="email" name="email" placeholder="이메일" required /><br />
-				<input type="hidden" name="member" value="ordinary" /><br /> 
-				<input type="submit" value="회원가입" onclick="check();" /><br/> 
-				<a href="culture-place.html"> <input type="button" value="페이지 이동" />
+				<input type="hidden" name="member" value="ordinary" /><br /> <input
+					type="submit" value="회원가입" onclick="check();" /><br /> <a
+					href="culture-place.html"> <input type="button" value="페이지 이동" />
 				</a>
 			</form>
 		</div>
 	</div>
+	<br>
+	<br>
+	<!-- footer -->
+	<%
+	pageContext.include("/WEB-INF/views/include/footer.jsp");
+	%>
 </body>
 </html>

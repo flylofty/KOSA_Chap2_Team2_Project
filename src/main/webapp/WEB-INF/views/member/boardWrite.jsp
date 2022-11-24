@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,7 +36,7 @@
 				<div class="person-information post-gap">
 					<img src='images/man2.svg' class="profile">
 					<div class="nickname-date">
-						<span class="nickname">마이클</span>
+						<span class="nickname"><b>${nickName} 님</b></span>
 					</div>
 				</div>
 			</div>

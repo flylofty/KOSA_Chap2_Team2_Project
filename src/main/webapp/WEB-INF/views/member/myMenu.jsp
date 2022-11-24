@@ -27,8 +27,7 @@
 			</div>
 		</a>
 		<div class="user-information">
-			<img src="images/big-man.svg" class="profile" /> <span>${nickName}
-				님</span>
+			<img src="images/big-man.svg" class="profile" /> <span>${nickName} 님</span>
 		</div>
 
 		<div class="menu">
