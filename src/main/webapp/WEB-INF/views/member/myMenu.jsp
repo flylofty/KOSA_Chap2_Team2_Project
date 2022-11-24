@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,7 +27,8 @@
 			</div>
 		</a>
 		<div class="user-information">
-			<img src="images/big-man.svg" class="profile" /> <span>관리자님</span>
+			<img src="images/big-man.svg" class="profile" /> <span>${nickName}
+				님</span>
 		</div>
 
 		<div class="menu">
@@ -49,61 +52,71 @@
 			</a>
 		</div>
 
-		<div>
-			<span class="sub-heading">나의활동</span>
-		</div>
-		<div class="menu-btn">
-			<a href="${request.getContextPath}myFlight.do">
-				<div class="btn">
-					<img src="btn-icon/reservation.svg" /> <span>예매</span>
+		<c:choose>
+			<c:when test="${sessionScope.userid ne null}">
+				<div>
+					<span class="sub-heading">나의활동</span>
 				</div>
-			</a> <a href="${request.getContextPath}myMeeting.do">
-				<div class="btn">
-					<img src="btn-icon/gathering.svg" /> <span>모임</span>
+				<div class="menu-btn">
+					<a href="${request.getContextPath}myFlight.do">
+						<div class="btn">
+							<img src="btn-icon/reservation.svg" /> <span>예매</span>
+						</div>
+					</a> <a href="${request.getContextPath}myMeeting.do">
+						<div class="btn">
+							<img src="btn-icon/gathering.svg" /> <span>모임</span>
+						</div>
+					</a>
 				</div>
-			</a>
-		</div>
 
-		<div>
-			<span class="sub-heading">관리페이지</span>
-		</div>
+				<div>
+					<span class="sub-heading">관리페이지</span>
+				</div>
 
-		<div class="menu-btn">
-			<a href="${request.getContextPath}managementNotice.do">
-				<div class="btn">
-					<img src="btn-icon/Megaphone.svg" width="45" height="45" /> <span>공지사항</span>
+				<div class="menu-btn">
+					<a href="${request.getContextPath}management.do?type=notice">
+						<div class="btn">
+							<img src="btn-icon/Megaphone.svg" width="45" height="45" /> <span>공지사항</span>
+						</div>
+					</a> <a href="${request.getContextPath}management.do?type=qna">
+						<div class="btn">
+							<img src="btn-icon/InformationFile.svg" width="45" height="45" />
+							<span>문의사항</span>
+						</div>
+					</a>
+					<c:choose>
+						<c:when test="${sessionScope.userid eq 'admin'}">
+							<a href="${request.getContextPath}management.do?type=statistics">
+								<div class="btn">
+									<img src="btn-icon/stats.svg" width="45" height="45" /> <span>통계</span>
+								</div>
+							</a>
+							<a href="${request.getContextPath}management.do?type=flight">
+								<div class="btn">
+									<img src="btn-icon/reservation-management.svg" width="45"
+										height="45" /> <span>예매관리</span>
+								</div>
+							</a>
+						</c:when>
+					</c:choose>
 				</div>
-			</a> <a href="${request.getContextPath}managementQna.do">
-				<div class="btn">
-					<img src="btn-icon/InformationFile.svg" width="45" height="45" />
-					<span>문의사항</span>
-				</div>
-			</a> <a href="${request.getContextPath}managementStatistics.do">
-				<div class="btn">
-					<img src="btn-icon/stats.svg" width="45" height="45" /> <span>통계</span>
-				</div>
-			</a> <a href="${request.getContextPath}managementFlight.do">
-				<div class="btn">
-					<img src="btn-icon/reservation-management.svg" width="45"
-						height="45" /> <span>예매관리</span>
-				</div>
-			</a>
-		</div>
 
-		<div>
-			<span class="sub-heading">마이페이지</span>
-		</div>
-		<div class="menu-btn">
-			<a href="${request.getContextPath}memberEdit.do">
-				<div class="btn">
-					<img src="btn-icon/modify.svg" width="45" height="45" /> <span>수정</span>
+				<div>
+					<span class="sub-heading">마이페이지</span>
 				</div>
-			</a><a href="${request.getContextPath}memberUnregister.do">
-				<div class="btn">
-					<img src="btn-icon/withdrawal.svg" width="45" height="45" /> <span>탈퇴</span>
+				<div class="menu-btn">
+					<a href="${request.getContextPath}memberEdit.do">
+						<div class="btn">
+							<img src="btn-icon/modify.svg" width="45" height="45" /> <span>수정</span>
+						</div>
+					</a><a href="${request.getContextPath}memberUnregister.do">
+						<div class="btn">
+							<img src="btn-icon/withdrawal.svg" width="45" height="45" /> <span>탈퇴</span>
+						</div>
+					</a>
 				</div>
-			</a>
-		</div>
+			</c:when>
+		</c:choose>
 	</div>
 	</div>
 

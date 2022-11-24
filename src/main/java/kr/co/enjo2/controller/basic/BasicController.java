@@ -12,11 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.enjo2.action.Action;
 import kr.co.enjo2.action.ActionForward;
 import kr.co.enjo2.service.basic.GatherPageMoveService;
+import kr.co.enjo2.service.member.BoardWrite;
 import kr.co.enjo2.service.member.JoinViewService;
-import kr.co.enjo2.service.member.ManagementFlightService;
-import kr.co.enjo2.service.member.ManagementNoticeService;
-import kr.co.enjo2.service.member.ManagementQnaService;
-import kr.co.enjo2.service.member.ManagementStatisticsService;
+import kr.co.enjo2.service.member.ManagementService;
 import kr.co.enjo2.service.member.MemberEditService;
 import kr.co.enjo2.service.member.MemberLoginOkService;
 import kr.co.enjo2.service.member.MemberLoginViewService;
@@ -77,21 +75,9 @@ public class BasicController extends HttpServlet {
     		// 나의 모임 현황
     		action = new MyMeetingService();
     		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/managementNotice.do")) {
+    	}else if(url_Command.equals("/management.do")) {
     		// 공지사항
-    		action = new ManagementNoticeService();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/managementQna.do")) {
-    		// 문의사항
-    		action = new ManagementQnaService();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/managementStatistics.do")) {
-    		// 통계
-    		action = new ManagementStatisticsService();
-    		forward = action.execute(request, response);
-    	}else if(url_Command.equals("/managementFlight.do")) {
-    		// 통계
-    		action = new ManagementFlightService();
+    		action = new ManagementService();
     		forward = action.execute(request, response);
     	}else if(url_Command.equals("/memberEdit.do")) {
     		// 회원정보 수정
@@ -104,6 +90,10 @@ public class BasicController extends HttpServlet {
     	}else if(url_Command.equals("/memberUnregisterOk.do")) {
     		// 회원탈퇴
     		action = new MemberUnregisterOkService();
+    		forward = action.execute(request, response);
+    	}else if(url_Command.equals("/boardWrite.do")) {
+    		// 글쓰기
+    		action = new BoardWrite();
     		forward = action.execute(request, response);
     	}
     	

@@ -29,19 +29,20 @@
 		<div class="information-frame">
 			<span class="culture-sub-heading">관리자 페이지</span>
 			<ul class="page-category">
-				<a href="${request.getContextPath}managementNotice.do">
+				<a href="${request.getContextPath}management.do?type=notice">
 					<li class="sub-heading">공지사항</li>
 				</a>
-				<a href="${request.getContextPath}managementQna.do">
+				<a href="${request.getContextPath}management.do?type=qna">
 					<li>문의사항</li>
 				</a>
-				<a href="${request.getContextPath}managementStatistics.do">
+				<a href="${request.getContextPath}management.do?type=stastics">
 					<li>통계</li>
 				</a>
-				<a href="${request.getContextPath}managementFlight.do">
+				<a href="${request.getContextPath}management.do?type=flight">
 					<li>예매관리</li>
 				</a>
 			</ul>
+			
 			<table class="management-table">
 				<thead>
 					<tr>
@@ -53,69 +54,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
 					<tr>
 						<td>10</td>
 						<td>오늘 점심</td>
@@ -148,8 +86,9 @@
 	<ul class="macgyver-btn">
 		<li><img src="btn-icon/plus-btn.svg"
 			style="background-color: #ffff; border-radius: 50%;"></li>
-		<li><iconify-icon icon="iconoir:edit-pencil"
-				style="color: #ef6351;" width="30" height="30"></iconify-icon></li>
+		<li><a href="${request.getContextPath}boardWrite.do"> <iconify-icon
+					icon="iconoir:edit-pencil" style="color: #ef6351;" width="30"
+					height="30"></iconify-icon></a></li>
 	</ul>
 
 </body>
