@@ -22,16 +22,25 @@ public class MemberRegisterOkService implements Action {
 			String nickname = request.getParameter("nickname");
 			String email = request.getParameter("email");
 
+			MemberDao dao = new MemberDao();
+
+			MemberDto findMember = dao.findOne(id);
+
+			// null이 아닌 경우는 이미 존재하는 사용자 아이디
+			if (findMember != null) {
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>alert('중복되는 아이디 입니다.'); location.href='joinView.do';</script>");
+				out.flush();
+				return null;
+			}
+
 			MemberDto member = new MemberDto();
 			member.setId(id);
 			member.setPassword(pw);
 			member.setNickName(nickname);
 			member.setEmail(email);
 
-			System.out.println("================================");
-			System.out.println(member);
-
-			MemberDao dao = new MemberDao();
 			int result = dao.saveOne(member);
 
 			forward = new ActionForward();
@@ -39,14 +48,15 @@ public class MemberRegisterOkService implements Action {
 				// 로그인 페이지로 리다이렉트
 				forward.setRedirect(true);
 				// 일단 야매 "http://localhost:8090/team2" 이부분 어떻게 뽑음??
+				PrintWriter out = response.getWriter();
+
 				forward.setPath(request.getContextPath() + "/loginView.do");
 			} else {
 				forward = null;
 				PrintWriter out = response.getWriter();
-				response.setCharacterEncoding("UTF-8");
-				out.print("<script>");
-				out.print("alert('잠시후 다시 시도해주세요')");
-				out.print("</script>");
+				response.setContentType("text/html; charset=UTF-8");
+				out.println("<script>alert('잠시후 다시 시도해주세요'); location.href='joinView.do';</script>");
+				out.flush();
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

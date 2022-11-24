@@ -31,7 +31,11 @@ public class MemberLoginOkService implements Action {
 			if (member == null) { // 없는 사용자인 경우
 				// 회원가입 페이지로 갑니다.
 				// 알러트 창 어떻게 띄우죠?
-				forward.setPath("/WEB-INF/views/member/join.jsp");
+				//forward.setPath("/WEB-INF/views/member/join.jsp");
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>alert('회원가입ㄱㄱ'); location.href='joinView.do';</script>");
+				out.flush();
 			} else {
 				if (member.getPassword().equals(pwd)) {
 					HttpSession session = request.getSession();
@@ -52,7 +56,6 @@ public class MemberLoginOkService implements Action {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
 		return forward;
 	}
 

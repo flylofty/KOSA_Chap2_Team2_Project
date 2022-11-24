@@ -10,14 +10,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script
 	src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/common.js" type="module"></script>
 <script src="js/macgyver.js" type="module"></script>
 <link href="style/header-footer.css" rel="stylesheet" type="text/css" />
 <link href="style/culture-place.css" rel="stylesheet" type="text/css" />
 <link href="style/common.css" rel="stylesheet" type="text/css" />
 <link href="style/management-page.css" rel="stylesheet" type="text/css" />
-<link href="style/culture-gathering.css" rel="stylesheet"
-	type="text/css" />
+<link href="style/culture-gathering.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	/////onload/////
+	$(function(){
+		showNotice(1);
+	});
+	
+	function showNotice(num){
+		
+		$.ajax(
+			{
+				type: "get",
+				url: "noticeList.do",
+				dataType: "json",
+				data:{
+					page : num
+				},
+				success: function(data){
+					const noticeList = data.noticeList;
+					//console.log(noticeList);
+					
+					if(noticeList.length > 0){
+						$('#noticeBox').show();
+					} else{
+						$('#noticeBox').hide();
+						return;
+					}
+					
+					$('#noticeTable').empty();
+					
+					for(const notice of noticeList){
+						let tempHtml = `<tr>
+											<td>${notice.number}</td>
+											<td>${notice.title}</td>
+											<td>${notice.writer}</td>
+											<td>${notice.date}</td>
+											<td>${notice.count}</td>
+										</tr>`
+						$('#noticeTable').append(tempHtml);
+					}
+				},
+				error:function (request, status, error){
+					console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error)
+				}
+			}
+		)		
+	}
+</script>
+</head>
 <body>
 	<!-- header -->
 	<%
@@ -29,7 +77,7 @@
 		<div class="information-frame">
 			<span class="culture-sub-heading">관리자 페이지</span>
 			<ul class="page-category">
-				<a href="${request.getContextPath}management.do?type=notice">
+				<a href="${request.getContextPath}management.do?type=notice&page=1">
 					<li class="sub-heading">공지사항</li>
 				</a>
 				<a href="${request.getContextPath}management.do?type=qna">
@@ -42,8 +90,8 @@
 					<li>예매관리</li>
 				</a>
 			</ul>
-			
-			<table class="management-table">
+
+			<table id="noticeBox" class="management-table" >
 				<thead>
 					<tr>
 						<td>게시번호</td>
@@ -53,17 +101,9 @@
 						<td>조회수</td>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>10</td>
-						<td>오늘 점심</td>
-						<td>세종</td>
-						<td>11-22</td>
-						<td>5</td>
-					</tr>
+				<tbody id ="noticeTable">
 				</tbody>
 			</table>
-
 			<ul class="paging-btn">
 				<li>이전</li>
 				<li>1</li>
@@ -71,7 +111,6 @@
 				<li>3</li>
 				<li>4</li>
 				<li>5</li>
-				<li>6</li>
 				<li>다음</li>
 			</ul>
 		</div>
