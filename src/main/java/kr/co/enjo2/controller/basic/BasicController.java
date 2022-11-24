@@ -25,6 +25,7 @@ import kr.co.enjo2.service.member.MemberUnregisterService;
 import kr.co.enjo2.service.member.MyFlightService;
 import kr.co.enjo2.service.member.MyMeetingService;
 import kr.co.enjo2.service.member.MyMenuService;
+import kr.co.enjo2.service.notice.NoticeListService;
 
 @WebServlet({ "/BasicController", "*.do" })
 public class BasicController extends HttpServlet {
@@ -94,6 +95,10 @@ public class BasicController extends HttpServlet {
     	}else if(url_Command.equals("/boardWrite.do")) {
     		// 글쓰기
     		action = new BoardWrite();
+    		forward = action.execute(request, response);
+    	}else if(url_Command.equals("/noticeList.do")) {
+    		// 글쓰기
+    		action = new NoticeListService();
     		forward = action.execute(request, response);
     	}
     	
