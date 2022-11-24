@@ -13,7 +13,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/common.js" type="module"></script>
 <script src="js/macgyver.js" type="module"></script>
-<link href="style/header-footer.css" rel="stylesheet" type="text/css" />
+<link href="style/header-Footer.css" rel="stylesheet" type="text/css" />
 <link href="style/culture-place.css" rel="stylesheet" type="text/css" />
 <link href="style/common.css" rel="stylesheet" type="text/css" />
 <link href="style/management-page.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@
 				},
 				success: function(data){
 					const noticeList = data.noticeList;
-					//console.log(noticeList);
+					console.log(data);
 					
 					if(noticeList.length > 0){
 						$('#noticeBox').show();
@@ -49,11 +49,11 @@
 					
 					for(const notice of noticeList){
 						let tempHtml = `<tr>
-											<td>${notice.number}</td>
-											<td>${notice.title}</td>
-											<td>${notice.writer}</td>
-											<td>${notice.date}</td>
-											<td>${notice.count}</td>
+											<td>\${notice.number}</td>
+											<td>\${notice.title}</td>
+											<td>\${notice.writer}</td>
+											<td>\${notice.date}</td>
+											<td>\${notice.count}</td>
 										</tr>`
 						$('#noticeTable').append(tempHtml);
 					}

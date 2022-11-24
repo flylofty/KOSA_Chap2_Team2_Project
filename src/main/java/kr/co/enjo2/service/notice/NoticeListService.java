@@ -25,6 +25,8 @@ public class NoticeListService implements Action {
 
 			JSONArray noticeList = new JSONArray();
 			for (NoticeDto n : noticeArr) {
+				System.out.println("===================");
+				System.out.println(n);
 				JSONObject obj = new JSONObject();
 				obj.put("number", n.getNoticeNo());
 				obj.put("title", n.getTitle());
@@ -35,8 +37,9 @@ public class NoticeListService implements Action {
 				noticeList.add(obj);
 			}
 
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("application/json;charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			response.setContentType("application/json; charset=uft-8");
 			JSONObject obj = new JSONObject();
 			obj.put("noticeList", noticeList);
 			String result = obj.toJSONString();

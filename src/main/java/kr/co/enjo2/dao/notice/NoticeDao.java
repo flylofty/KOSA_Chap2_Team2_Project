@@ -37,7 +37,7 @@ public class NoticeDao {
 			conn = ds.getConnection();
 			String sql = "select * "
 					+ "from ("
-					+ "        select ROWNUM as NUM, notice_no, mem_id, noti_title, noti_content, TO_CHAR(noti_created_at) as timeAt "
+					+ "        select ROWNUM as NUM, notice_no, mem_id, noti_title, noti_content, TO_CHAR(noti_created_at, 'YYYY-MM-DD HH24:MI') as timeAt "
 					+ "        from notice "
 					+ "        order by notice_no desc "
 					+ "    )"
