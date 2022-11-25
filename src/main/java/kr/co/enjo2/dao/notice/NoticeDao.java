@@ -22,6 +22,37 @@ public class NoticeDao {
 		ds = (DataSource) context.lookup("java:comp/env/jdbc/oracle");
 	}
 	
+	public int getTotalCount() {
+		int count = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = ds.getConnection();
+			String sql = "select count(notice_no) as cnt from notice";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				count = rs.getInt("cnt");
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+				conn.close();
+			} catch (Exception e2) {
+				System.out.println(e2.getMessage());
+			}
+		}
+		
+		return count;
+	}
+	
 	public List<NoticeDto> findAllByPage(int page) {
 		
 		int[] strPage = calculatePage(page);
@@ -71,7 +102,7 @@ public class NoticeDao {
 		return noticeList;
 	}
 	
-	private int[] calculatePage(int page) {
+	public int[] calculatePage(int page) {
 		int[] arr = {0, 0};
 		arr[0] = 10 * page - 9;
 		arr[1] = arr[0] + 10 - 1;
