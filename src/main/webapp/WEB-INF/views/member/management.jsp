@@ -57,6 +57,29 @@
 										</tr>`
 						$('#noticeTable').append(tempHtml);
 					}
+					
+					// 페이징 처리 시작
+					$('#pages').empty();	//페이지 리셋
+					
+					const pageInfo = data.pageInfo;
+					// 이전 붙이기
+					const start = Number(pageInfo.start)-1;
+					if (pageInfo.prev == 1){
+						let tempHtml = `<li onclick = "showNotice(\${start})"> 이전 </li>`
+						$('#pages').append(tempHtml);
+					}
+					// 페이지 번호 붙이기
+					for(let i = pageInfo.start; i <= pageInfo.end; i++) {
+						let tempHtml = `<li onclick = "showNotice(\${i})">\${i}</li>`;
+						$('#pages').append(tempHtml);
+					}
+					// 이후 붙이기
+					const end = Number(pageInfo.end) + 1;
+					if (pageInfo.next == 1){
+						let tempHtml = `<li onclick = "showNotice(\${end})">다음</li>`
+						$('#pages').append(tempHtml);
+					}
+					// 페이징 처리 끝
 				},
 				error:function (request, status, error){
 					console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error)
@@ -104,14 +127,7 @@
 				<tbody id ="noticeTable">
 				</tbody>
 			</table>
-			<ul class="paging-btn">
-				<li>이전</li>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-				<li>다음</li>
+			<ul class="paging-btn" id = "pages">
 			</ul>
 		</div>
 	</div>
